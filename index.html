@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pempta</title>
+<meta name="description" content="Pempta. Quintessence of health. In the making.">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="Pempta">
+<meta property="og:description" content="Quintessence of health. In the making.">
+<meta property="og:image" content="https://pempta.com/assets/mark.png">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f9f7f3;        /* the cream of the mark */
+    --paper-deep: #eef3f0;
+    --ink: #2a5a56;
+    --ink-soft: #6f8f8a;
+    --sage: #8fc3b5;
+    --lavender: #b9b3dc;
+    --hair: #dfe6e2;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0e1a19;
+      --paper-deep: #122422;
+      --ink: #e7efec;
+      --ink-soft: #92aaa5;
+      --sage: #5fa797;
+      --lavender: #8a84b8;
+      --hair: #213634;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0e1a19; --paper-deep: #122422; --ink: #e7efec; --ink-soft: #92aaa5;
+    --sage: #5fa797; --lavender: #8a84b8; --hair: #213634;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    color: var(--ink);
+    background: var(--paper);
+    background-image:
+      radial-gradient(60vmax 60vmax at 20% 15%, color-mix(in oklab, var(--sage) 22%, transparent), transparent 70%),
+      radial-gradient(55vmax 55vmax at 80% 85%, color-mix(in oklab, var(--lavender) 22%, transparent), transparent 70%);
+    background-attachment: fixed;
+    font-family: "Jost", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    min-height: 100svh;
+    padding: 0 16px;
+  }
+  main {
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    text-align: center;
+    padding: 10vh 0 6vh;
+  }
+  .mark {
+    width: clamp(160px, 28vmin, 260px);
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 18px 40px color-mix(in oklab, var(--ink) 12%, transparent));
+    animation: breathe-in 2.6s cubic-bezier(.2,.7,.2,1) both;
+  }
+  .word {
+    margin: 2.2rem 0 0;
+    font-size: clamp(2.8rem, 9vw, 5.2rem);
+    font-weight: 200;
+    letter-spacing: 0.08em;
+    text-indent: 0.08em;
+    line-height: 1;
+    animation: rise 1.6s cubic-bezier(.2,.7,.2,1) .9s both;
+  }
+  .tag {
+    margin: 1.1rem 0 0;
+    font-size: clamp(0.78rem, 1.6vw, 0.92rem);
+    font-weight: 400;
+    letter-spacing: 0.34em;
+    text-indent: 0.34em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    animation: rise 1.6s cubic-bezier(.2,.7,.2,1) 1.3s both;
+  }
+  .trace {
+    width: min(78vw, 520px);
+    height: auto;
+    margin-top: 3.2rem;
+    overflow: visible;
+  }
+  .trace path {
+    fill: none;
+    stroke: var(--sage);
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+    stroke-dasharray: 1400;
+    stroke-dashoffset: 1400;
+    animation: draw 3.4s cubic-bezier(.45,.02,.3,1) 1.9s forwards;
+  }
+  .status {
+    margin: 1.6rem 0 0;
+    font-size: 1rem;
+    color: var(--ink-soft);
+    animation: rise 1.6s ease 3.6s both;
+  }
+  @keyframes breathe-in { from { opacity: 0; transform: scale(.94) translateY(8px); } to { opacity: 1; transform: none; } }
+  @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @media (prefers-reduced-motion: reduce) {
+    .mark, .word, .tag, .status { animation: none; }
+    .trace path { animation: none; stroke-dashoffset: 0; }
+  }
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem 1.5rem;
+    padding: 1.25rem 0 1.5rem;
+    border-top: 1px solid var(--hair);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    max-width: 720px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  footer a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--hair); }
+  footer a:hover, footer a:focus-visible { border-bottom-color: var(--sage); }
+  :focus-visible { outline: 2px solid var(--sage); outline-offset: 4px; }
+</style>
+</head>
+<body>
+  <main>
+    <img class="mark" src="assets/mark.png" width="800" height="800" alt="Pempta mark: a five enclosing a lotus">
+    <h1 class="word">pempta</h1>
+    <p class="tag">Quintessence of health</p>
+    <svg class="trace" viewBox="0 0 520 80" aria-hidden="true" focusable="false">
+      <path d="M0 40 H150 c5 0 7-8 10-8 s5 8 8 8 h34 l8-20 8 40 8-18 h34 c5 0 7-7 10-7 s5 7 8 7 H520"/>
+    </svg>
+    <p class="status">In the making.</p>
+  </main>
+  <footer>
+    <span>This page sets no cookies and collects nothing.</span>
+    <a href="mailto:hello@pempta.com">hello@pempta.com</a>
+    <span>&copy; 2026 Pempta</span>
+  </footer>
+</body>
+</html>
